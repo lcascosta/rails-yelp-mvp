@@ -1,2 +1,12 @@
-<h1>Restaurants#new</h1>
-<p>Find me in app/views/restaurants/new.html.erb</p>
+<div class="container text-center">
+  <h1>Add a Restaurant</h1>
+  <%= simple_form_for @restaurant do |f| %>
+    <%= f.input :name, label: 'Restaurant name:', error: 'Username is mandatory, please specify one' %>
+    <%= f.input :category, collection: ["Chinese", "Italian", "Japanese", "French", "Belgian"] %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+  <br>
+  <%= link_to "Back to All Restaurants", restaurants_path, class: "btn"%>
+</div>
